@@ -1,11 +1,12 @@
 package com.example.customApp.data
 
-import kotlinx.coroutines.flow.Flow
+import androidx.lifecycle.LiveData
+
 
 class OfflinesenDataRepository(private val senDataDao : senDataDao) : senDataRepository {
-    override fun getAllItemsStream(): Flow<List<sensorData>> = senDataDao.getAllData()
+    override fun getAllItemsStream(): LiveData<List<sensorData>> = senDataDao.getAllData()
 
-    override fun getItemStream(id: Int): Flow<sensorData?> = senDataDao.getData(id)
+    override fun getItemStream(id: Int): LiveData<sensorData?> = senDataDao.getData(id)
 
     override suspend fun insertItem(item: sensorData) = senDataDao.insert(item)
 
