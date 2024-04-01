@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.customApp
 
 import org.junit.Test
 
